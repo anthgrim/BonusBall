@@ -1,0 +1,9 @@
+#ball{
+    z-index: 0;
+    top: 0px;
+    left: 0px;
+    width: 100px;
+    height: 100px;
+    background-color: aquamarine;
+    border-radius: 50%;
+}
