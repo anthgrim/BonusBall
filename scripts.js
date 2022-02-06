@@ -43,29 +43,33 @@ randomColorBtn.addEventListener('click',()=>{
 
 //Move Right
 moveRight.addEventListener('click',()=> {
-    const xMove = parseInt(prompt("How many pixels should the ball move?"));
-    ball.style.left = xMove + "px";
+    const xMove1 = parseInt(prompt("How many pixels should the ball move?"))
+    const currentX1 = parseInt(ball.style.left.slice(0,ball.style.left.length - 2));
+    const finalMove1 = currentX1 + xMove1;
+    ball.style.left = finalMove1 + "px"
 })
 
 //Move Left
 moveLeft.addEventListener('click',() =>{
-    const xMove = parseInt(prompt("How many pixels should the ball move?"))
+    const xMove2 = parseInt(prompt("How many pixels should the ball move?"))
     const currentX = parseInt(ball.style.left.slice(0,ball.style.left.length - 2));
-    const finalMove = currentX - xMove;
-    ball.style.left = finalMove + "px"
+    const finalMove2 = currentX - xMove2;
+    ball.style.left = finalMove2 + "px"
 })
 
 //Move Down
 moveDown.addEventListener('click', () => {
-    const yMove = parseInt(prompt("How many pixels down should the ball move?"));
-    ball.style.top = yMove + "px";
+    const yMove1 = parseInt(prompt("How many pixels down should the ball move?"));
+    const currentY1 = parseInt(ball.style.top.slice(0,ball.style.top.length -2));
+    const finalMoveY1 = currentY1 + yMove1;
+    ball.style.top = finalMoveY1 + "px";
 })
 
 moveUp.addEventListener('click', ()=> {
-    const yMove = parseInt(prompt("How many pixels up should the ball move?"));
-    const currentY = parseInt(ball.style.top.slice(0,ball.style.top.length -2));
-    const finalMoveY = currentY - yMove;
-    ball.style.top = finalMoveY + "px";
+    const yMove2 = parseInt(prompt("How many pixels up should the ball move?"));
+    const currentY2 = parseInt(ball.style.top.slice(0,ball.style.top.length -2));
+    const finalMoveY2 = currentY2 - yMove2;
+    ball.style.top = finalMoveY2 + "px";
 })
 
 //Set Interval

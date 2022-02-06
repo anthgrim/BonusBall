@@ -1,18 +1,5 @@
 body{
     background-color: #14213d;
-    
-}
-
-#ball{
-    z-index: 0;
-    position: absolute;
-    left: 25px;
-    top: 150px;
-    width: 100px;
-    height: 100px;
-    background-color: white;
-    border-radius: 50%;
-    transition: 0.5s ease-in-out;
 }
 
 button{
