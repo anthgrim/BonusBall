@@ -74,7 +74,7 @@ moveUp.addEventListener('click', ()=> {
 
 //Set Interval
 const intervalMovement = () => {
-    let xFinal = window.screen.width;
+    let xFinal = 800;
 
     if(xInitial > xFinal || xInitial === 0){
         reverse = !reverse
