@@ -1,16 +1,17 @@
 //Constants
 const ball = document.getElementById("ball");
-const button = document.getElementById("btn")
-let xIni = 0;
-let yIni = 0;
-let newBallY = 100;
-let xMax = window.screen.width;
-let xMin = 0;
-let yMax = window.screen.height;
-let yMin = 0;
-
-const newBall = document.createElement('div');
-
+const generateBtn = document.getElementById("generate")
+const hideBtn = document.getElementById("hide");
+const randomColorBtn = document.getElementById('randomColor');
+const moveRight = document.getElementById('moveRight');
+const moveLeft = document.getElementById('moveLeft');
+const moveDown = document.getElementById('moveDown');
+const moveUp = document.getElementById('moveUp');
+const setIntervalBtn = document.getElementById('setIntervalBtn');
+let reverse = false;
+let velocity = 100;
+let xInitial = 0;
+let yInitial = 150;
 
 //Generates random RGB Color
 const randomRGB = () => {
@@ -22,19 +23,73 @@ const randomRGB = () => {
     return RGB;
 }
 
-const changePosition = () =>{   
+//Generate Ball
+generateBtn.addEventListener('click',()=>{
+    ball.classList.remove('hide');
+})
+
+//Hide Ball
+hideBtn.addEventListener('click', () => {
+    ball.classList.add('hide');
+})
+
+//Set random Color 
+const randomizeColor = () => {
     ball.style.backgroundColor = randomRGB();
-    ball.style.top = yMax + "px";
-    ball.style.left = xMax + "px";
+}
+randomColorBtn.addEventListener('click',()=>{
+    setInterval(randomizeColor, 500)
+})
+
+//Move Right
+moveRight.addEventListener('click',()=> {
+    const xMove = parseInt(prompt("How many pixels should the ball move?"));
+    ball.style.left = xMove + "px";
+})
+
+//Move Left
+moveLeft.addEventListener('click',() =>{
+    const xMove = parseInt(prompt("How many pixels should the ball move?"))
+    const currentX = parseInt(ball.style.left.slice(0,ball.style.left.length - 2));
+    const finalMove = currentX - xMove;
+    ball.style.left = finalMove + "px"
+})
+
+//Move Down
+moveDown.addEventListener('click', () => {
+    const yMove = parseInt(prompt("How many pixels down should the ball move?"));
+    ball.style.top = yMove + "px";
+})
+
+moveUp.addEventListener('click', ()=> {
+    const yMove = parseInt(prompt("How many pixels up should the ball move?"));
+    const currentY = parseInt(ball.style.top.slice(0,ball.style.top.length -2));
+    const finalMoveY = currentY - yMove;
+    ball.style.top = finalMoveY + "px";
+})
+
+//Set Interval
+const intervalMovement = () => {
+    let xFinal = window.screen.width;
+
+    if(xInitial > xFinal || xInitial === 0){
+        reverse = !reverse
+        ball.style.backgroundColor = randomRGB();
+    }
+
+    if(reverse){
+        xInitial = xInitial + velocity;
+        ball.style.left = xInitial + "px";
+    }else{
+        xInitial = xInitial - velocity;
+        ball.style.left = xInitial + "px";
+    }
 }
 
-setTimeout(changePosition,3000)
-
-//Interaction Interval
-// setInterval(()=>{
-//     
-// },1000)
-
-// button.addEventListener('click',()=>{
-    
-// })
+setIntervalBtn.addEventListener('click',()=>{
+    //Get the ball back to the starting point or xInitial
+    ball.style.left = xInitial + "px";
+    //Remove transition
+    ball.style.transition = "0s";
+    setInterval(intervalMovement, 25);
+})
