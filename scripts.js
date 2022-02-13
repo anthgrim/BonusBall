@@ -23,7 +23,7 @@ const randomRGB = () => {
     return RGB;
 }
 
-//Unhides Ball
+//Unhides Ball 
 generateBtn.addEventListener('click',()=>{
     ball.classList.remove('hide'); //classList allows the user to add, remove or modify a class that can be added to the element
 })
