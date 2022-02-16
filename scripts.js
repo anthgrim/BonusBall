@@ -8,6 +8,7 @@ const moveLeft = document.getElementById('moveLeft');
 const moveDown = document.getElementById('moveDown');
 const moveUp = document.getElementById('moveUp');
 const setIntervalBtn = document.getElementById('setIntervalBtn');
+const stopBtn = document.getElementById("stopInterval");
 let reverse = false;
 let velocity = 100;
 let xInitial = 0;
@@ -117,6 +118,7 @@ const intervalMovement = () => {
         ball.style.left = xInitial + "px";
     }
 }
+let intervalId;
 
 setIntervalBtn.addEventListener('click',()=>{
     //Get the ball back to the starting point or xInitial. This to make it visible in the preset screen values.
@@ -124,5 +126,10 @@ setIntervalBtn.addEventListener('click',()=>{
     //Remove transition. If the transition is not the removed, the ball lags in between intervals
     ball.style.transition = "0s";
     //Sets interval calling the intervalMovement function
-    setInterval(intervalMovement, 25);
+    intervalId = setInterval(intervalMovement, 25);
+})
+
+stopBtn.addEventListener('click',() => {
+    clearInterval(intervalId);
+    ball.style.transition = "0.5s ease-in-out"
 })
