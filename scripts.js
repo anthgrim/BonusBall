@@ -1,6 +1,6 @@
 //Constants
 const ball = document.getElementById("ball");
-const unhide = document.getElementById("generate")
+const unhide = document.getElementById("unhide")
 const hideBtn = document.getElementById("hide");
 const randomColorBtn = document.getElementById('randomColor');
 const moveRight = document.getElementById('moveRight');
