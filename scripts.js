@@ -1,6 +1,6 @@
 //Constants
 const ball = document.getElementById("ball");
-const generateBtn = document.getElementById("generate")
+const unhide = document.getElementById("generate")
 const hideBtn = document.getElementById("hide");
 const randomColorBtn = document.getElementById('randomColor');
 const moveRight = document.getElementById('moveRight');
@@ -25,7 +25,7 @@ const randomRGB = () => {
 }
 
 //Unhides Ball 
-generateBtn.addEventListener('click',()=>{
+unhide.addEventListener('click',()=>{
     ball.classList.remove('hide'); //classList allows the user to add, remove or modify a class that can be added to the element
 })
 
