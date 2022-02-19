@@ -1,6 +1,6 @@
-#Bonus Ball Coding Challenge - Full Stack With MERN MIT/xPro
+# Bonus Ball Coding Challenge - Full Stack With MERN MIT/xPro
 
-##Description
+## Description
 
 This coding challenge is based on previous exercises of the Week 3 of the course.
 The student is assigned with a task to add whatever new features is posible to create
@@ -19,10 +19,10 @@ element, such as:
 8. Random Ball. This button adds an interval to the ball to repeat a movement from left to right, and reversing direction when hitting an edge. 
 9. Stop Random. Stops the random ball interval.
 
-##Functions used
+## Functions used
 
-*calculateMove: Is a function that needs three arguments, the ball element, moveType and moveDirection. This function prompts the user to input the number of pixels the ball should move in the respective direction. This input is parse to an integer to make the calculations possible. Then it gets the current position on X or Y, depending on the move direction that was passed, and then adds the move direction to a result variable. This result will depend on the move type (plus or minus).
+* calculateMove: Is a function that needs three arguments, the ball element, moveType and moveDirection. This function prompts the user to input the number of pixels the ball should move in the respective direction. This input is parse to an integer to make the calculations possible. Then it gets the current position on X or Y, depending on the move direction that was passed, and then adds the move direction to a result variable. This result will depend on the move type (plus or minus).
 
-###Link to the gitPage
+### Link to the gitPage
 
 https://anthgrim.github.io/BonusBall/
